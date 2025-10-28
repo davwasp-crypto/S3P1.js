@@ -5,7 +5,14 @@
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-
+function crazySum (num1,num2) {
+    let somma = num1 + num2;
+    if (num1 == num2) {
+        somma = somma * 3;
+    }
+    return somma
+}
+console.log (crazySum(6,6))
 
 /* ESERCIZIO 2
  Scrivi una funzione chiamata "boundary", che accetta un numero intero come parametro e ritorna true se tale parametro è incluso tra 20 e 100 (incluso) o se è esattamente uguale a 400.
@@ -13,11 +20,29 @@
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+function boundary (a){
+    if ((a >= 20 && a <= 100) || a == 400){
+        return true
+    } else {
+        return false
+    } 
+}
+console.log(boundary(50))
+
 /* ESERCIZIO 3
  Scrivi una funzione chiamata "reverseString", che accetta una stringa come parametro e la ritorna invertita (es.: EPICODE => EDOCIPE).
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+function reverseString (string){
+    let stringReverse = '';
+    for (let i = string.length -1; i >= 0; i--) {
+        stringReverse = stringReverse + string [i]
+     } 
+     return stringReverse
+}
+console.log(reverseString('EPICODE'))
 
 /* ESERCIZIO 4
  Scrivi una funzione chiamata "upperFirst", che accetta una stringa come parametro e la ritorna rendendo maiuscola ogni lettera iniziale di ogni parola.
@@ -25,11 +50,31 @@
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+function upperFirst (string){
+    let words = string.split(' ');
+    for (let i = 0; i < words.length; i++){
+        let currentWord = words [i];
+        currentWord = currentWord.charAt(0).toUppercase() + currentWord.slice(1);
+        words[i] = currentWord;
+    }
+    return words.join(' ');
+}
+   //console.log(upperFirst('ciao sono virgola e sono un gattino'))
+
 /* ESERCIZIO 5
  Scrivi una funzione chiamata "giveMeRandom", che accetta come parametro un numero chiamato n e ritorna un array contenente n numeri random contenuti tra 0 e 10.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+function giveMeRandom(n){
+    let numeri = [];
+    for(let i = 0; i < n; i++) {
+     numeri[i] = Math.floor( Math.random() * 11)
+    }
+    return numeri;
+} 
+console.log(giveMeRandom(10));
 
 //EXTRA:
 /* ESERCIZIO 1
